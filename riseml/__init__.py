@@ -18,7 +18,8 @@ def report_result(**kwargs):
         report_result(accuracy=.3, loss=.1)
 
     """
-    if not config.experiment_id:
+    experiment_id = config.experiment_id
+    if not experiment_id:
         experiment_id = kwargs.pop('experiment_id', None)
     if experiment_id:
         try:
