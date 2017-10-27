@@ -18,12 +18,12 @@ def report_result(**kwargs):
         report_result(accuracy=.3, loss=.1)
 
     """
-    experiment_id = config.experiment_id
+    experiment_id = config.EXPERIMENT_ID
     if not experiment_id:
         experiment_id = kwargs.pop('experiment_id', None)
     if experiment_id:
         try:
-            r = requests.post('%s/experiments/%s/result' % (config.api_host,
+            r = requests.post('%s/experiments/%s/result' % (config.API_URL,
                                                             experiment_id),
                               data = {'result': json.dumps(kwargs)})
             r.raise_for_status()
