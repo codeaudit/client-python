@@ -1,6 +1,6 @@
 import requests
 import json
-import config
+import riseml.config as config
 
 def report_result(**kwargs):
     """Report result to the RiseML API.
